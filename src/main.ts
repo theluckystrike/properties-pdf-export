@@ -5,6 +5,8 @@ import { SPONSORS, bindPro, isPro } from './pro';
 import { DEFAULT_SETTINGS, normalizeSettings, propertyRows, layoutFor, type HeaderOptions } from './header';
 import { renderHeader } from './render';
 import { PropertiesPdfExportSettingTab } from './settings';
+import { setupHello } from './hello/index';
+import WHATS_NEW from './whats-new.json';
 
 export default class PropertiesPdfExportPlugin extends Plugin {
 	settings: HeaderOptions = { ...DEFAULT_SETTINGS };
@@ -13,6 +15,8 @@ export default class PropertiesPdfExportPlugin extends Plugin {
 	private readonly scheduleRefresh = debounce(() => this.refresh(), 300, true);
 
 	async onload(): Promise<void> {
+		// First: "What's new" reads its state before the settings load (packages/hello). It does not wait.
+		setupHello(this, WHATS_NEW);
 		await this.loadSettings();
 		this.pro = createGitHubSponsors(this.app, this.manifest.id, SPONSORS, this);
 		this.pro.init();

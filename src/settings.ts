@@ -2,10 +2,16 @@ import { PluginSettingTab, type App, type SettingDefinitionItem } from 'obsidian
 import { sponsorsSettingItems } from './license/github-obsidian';
 import { PRO_UI, isPro } from './pro';
 import type PropertiesPdfExportPlugin from './main';
+import { helloSettingItems } from './hello/settings';
 
 export class PropertiesPdfExportSettingTab extends PluginSettingTab {
 	constructor(app: App, private readonly plugin: PropertiesPdfExportPlugin) { super(app, plugin); }
 	getSettingDefinitions(): SettingDefinitionItem[] {
+		// The product rows, then the "More from NoteMods" card (packages/hello).
+		return [...this.productSettingDefinitions(), ...helloSettingItems()];
+	}
+
+	productSettingDefinitions(): SettingDefinitionItem[] {
 		return [
 			{ name: 'Include properties in PDF', desc: 'Add a formatted header when the note is rendered for printing.', control: { type: 'toggle', key: 'enabled', defaultValue: true } },
 			{ name: 'Preview header in reading view', desc: 'Show the printable header before you export. Source text is unchanged.', control: { type: 'toggle', key: 'preview', defaultValue: false } },

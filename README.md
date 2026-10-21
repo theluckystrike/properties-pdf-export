@@ -26,7 +26,7 @@ Set a preferred order such as `author, date, status`. Those fields appear first.
 
 ### Table and compact layouts
 
-Table gives each property a label column and a value column. Compact puts short label and value pairs beside each other and wraps them when the page gets narrow. Both layouts are free. Long text and multiline values wrap inside the header. The print styles ask the renderer to keep each row together when space permits.
+Table gives each property a label column and a value column. Compact puts short label and value pairs beside each other and wraps them when the page gets narrow. Long text and multiline values wrap inside the header. The print styles ask the renderer to keep each row together when space permits.
 
 <img src="https://raw.githubusercontent.com/theluckystrike/properties-pdf-export/HEAD/docs/compact.png" alt="Compact properties header above the report text" width="720">
 
@@ -38,13 +38,13 @@ Save a layout rule for a folder when different kinds of notes need different hea
 
 <img src="https://raw.githubusercontent.com/theluckystrike/properties-pdf-export/HEAD/docs/folder-layouts.png" alt="Saved folder layout rules in settings with Pro inactive" width="720">
 
-The rule format is one line per folder: `Reports = compact` or `Reports/Clients = table`. Rules affect layout only. Your hide list and preferred order still apply. Without Pro, saved rules remain in settings and the global layout applies to every note. You can still select either layout manually.
+The rule format is one line per folder: `Reports = compact` or `Reports/Clients = table`. Rules affect layout only. Your hide list and preferred order still apply. Without Pro, saved rules remain in settings and the global layout applies to every note.
 
 Advanced PDF Export provides a separate export panel with page breaks, style presets and page controls. Its frontmatter option can retain the YAML block. Choose [Advanced PDF Export](https://github.com/ShrekBytes/advanced-pdf-export) for those document controls. Choose this plugin for a labeled property header with free field filtering and ordering inside the core exporter. [Complete PDF Export](https://github.com/nicodx/complete_pdf_export_Obsidian) also supports property cards through its own export workflow.
 
 ## Install
 
-This plugin needs desktop Obsidian 1.13.4 or later. The PDF export action belongs to desktop Obsidian. Mobile PDF export is outside this version.
+This plugin needs desktop Obsidian 1.13.4 or later. Mobile PDF export is outside this version.
 
 For a manual installation, get `main.js`, `manifest.json` and `styles.css` from a published release. Put those three files in your vault's `.obsidian/plugins/properties-pdf-export/` folder. Reload Obsidian, then enable Properties in PDF Export under Community plugins. Keep the stylesheet with the script: it controls the print header's visibility and layout.
 
@@ -62,6 +62,8 @@ Preview is optional. The header is included in the export even when reading prev
 
 ## Settings
 
+After a minor or major update, this plugin opens one What's new tab in the background. The tab and settings card suggest other NoteMods plugins and Zovo Chat and link to notemods.com for feedback ([privacy](https://notemods.com/privacy/)). The tab sends no data. Turn the tab off in Settings.
+
 Include properties in PDF turns header generation on or off. Preview header in reading view controls screen visibility separately. Header layout selects Table or Compact. Hidden properties accepts comma separated names. Property order accepts the names you want first. Skip empty values removes blank rows. Folder layouts stores the optional Pro rules.
 
 After a setting changes, reading previews refresh. An export dialog that is already open may have rendered the previous settings, so close it and start the export again. Settings are saved with this plugin in the vault. A GitHub token is stored separately by the shared Pro sign in.
@@ -74,11 +76,11 @@ No. The plugin reads the frontmatter supplied by Obsidian's rendering context an
 
 ### Can I include private properties safely?
 
-Review the hide list before sharing. Every nonempty property is included unless its name is hidden. Obsidian's internal position metadata is always excluded. A hidden name affects the printed header, not your source note or other plugins. Inspect the saved PDF whenever the document contains sensitive information.
+Review the hide list before sharing. Obsidian's internal position metadata is always excluded. A hidden name affects the printed header, not your source note or other plugins. Inspect the saved PDF whenever the document contains sensitive information.
 
 ### Will property links be clickable?
 
-Property values are printed as plain text. Wiki links show their alias or target but do not become clickable links. Rich Markdown, images and HTML in property values are also kept as text. Use the body of the note for content that needs rich rendering.
+Property values are printed as plain text. Wiki links do not become clickable. Use the body of the note for content that needs rich rendering.
 
 ### What about themes and other exporters?
 
