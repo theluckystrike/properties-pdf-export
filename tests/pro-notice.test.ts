@@ -7,7 +7,7 @@ import { bindPro } from '../src/pro';
 import manifest from '../manifest.json';
 
 // A free user can edit Folder layouts. Before, the text saved but did nothing. Now the edit shows the shared Pro
-// notice with the "Sponsor on GitHub" button, nothing is saved, and the field draws the saved rules again (README: saved rules remain in settings).
+// notice with the "Sponsor on GitHub" button, nothing is saved, and the field shows the value in effect (no rules). The saved rules stay in data.json.
 // A Pro user saves the rules with no notice.
 const LEAD = 'Folder layouts need Pro.';
 const PITCH = 'Sponsor on GitHub, then sign in from the plugin settings.';
@@ -35,6 +35,8 @@ function setup(pro: boolean) {
 	const tab = new PropertiesPdfExportSettingTab(app as never, plugin);
 	tab.update = vi.fn();
 	const base = vi.spyOn(Object.getPrototypeOf(PropertiesPdfExportSettingTab.prototype) as { setControlValue(k: string, v: unknown): unknown }, 'setControlValue');
+	// Obsidian PluginSettingTab.getControlValue reads plugin.settings[key]. The mock does the same here.
+	vi.spyOn(Object.getPrototypeOf(PropertiesPdfExportSettingTab.prototype) as { getControlValue(k: string): unknown }, 'getControlValue').mockImplementation((k: string) => (plugin.settings as unknown as Record<string, unknown>)[k]);
 	return { plugin, tab, shown, base };
 }
 
@@ -60,6 +62,22 @@ describe('Folder layouts for a free user', () => {
 		await tab.setControlValue('layout', 'compact');
 		expect(base).toHaveBeenCalledWith('layout', 'compact');
 		expect(shown).toHaveLength(1);
+	});
+
+	it('a free user with saved folder rules sees no rules in Folder layouts (the value in effect), and the saved rules stay', () => {
+		const { plugin, tab } = setup(false);
+		plugin.settings.folderLayouts = 'Reports = compact';
+		expect(tab.getControlValue('folderLayouts')).toBe('');
+		expect(plugin.settings.folderLayouts).toBe('Reports = compact');
+		// The free rows show the saved value.
+		plugin.settings.layout = 'compact';
+		expect(tab.getControlValue('layout')).toBe('compact');
+	});
+
+	it('a Pro user sees the saved folder rules in Folder layouts', () => {
+		const { plugin, tab } = setup(true);
+		plugin.settings.folderLayouts = 'Reports = compact';
+		expect(tab.getControlValue('folderLayouts')).toBe('Reports = compact');
 	});
 
 	it('a Pro user saves Folder layouts with no notice', async () => {

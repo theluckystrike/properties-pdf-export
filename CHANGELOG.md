@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.2
+
+### Patch Changes
+
+- f810f50: Without Pro, Folder layouts now shows no rules, because no rule is in effect. Your saved rules stay.
+
 ## 1.2.1
 
 ### Patch Changes

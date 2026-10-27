@@ -26,12 +26,17 @@ export class PropertiesPdfExportSettingTab extends PluginSettingTab {
 			...(this.plugin.pro ? sponsorsSettingItems(this.plugin.pro, PRO_UI) : []),
 		];
 	}
+	getControlValue(key: string): unknown {
+		// A free user sees the value in effect: no folder rules. The saved rules stay in data.json for the time that Pro comes back.
+		if (key === 'folderLayouts' && !isPro()) return '';
+		return super.getControlValue(key);
+	}
 	async setControlValue(key: string, value: unknown): Promise<void> {
 		if (key === 'folderLayouts' && !isPro()) {
 			// A free user can edit the row: the notice says what needs Pro and how to get it. Nothing is saved.
 			proNotice(PRO_FOLDERS);
 			// Obsidian does not draw a control again while it has the focus. Move the focus out, then draw the tab
-			// again, so the field shows the saved rules again.
+			// again, so the field shows the value in effect (no rules).
 			const active = this.containerEl.ownerDocument.activeElement as HTMLElement | null;
 			if (active && this.containerEl.contains(active)) active.blur();
 			this.update();

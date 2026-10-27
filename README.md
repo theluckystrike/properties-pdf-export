@@ -38,7 +38,7 @@ Save a layout rule for a folder when different kinds of notes need different hea
 
 <img src="https://raw.githubusercontent.com/theluckystrike/properties-pdf-export/HEAD/docs/folder-layouts.png" alt="Saved folder layout rules in settings with Pro inactive" width="720">
 
-The rule format is one line per folder: `Reports = compact` or `Reports/Clients = table`. Rules affect layout only. Your hide list and preferred order still apply. Without Pro, saved rules remain in settings and the global layout applies to every note. Without Pro, an edit shows a Sponsor on GitHub notice.
+The rule format is one line per folder: `Reports = compact` or `Reports/Clients = table`. Rules affect layout only. Your hide list and preferred order still apply. Without Pro, the field is empty, saved rules stay, and the global layout applies to every note. Without Pro, an edit shows a Sponsor on GitHub notice.
 
 Advanced PDF Export provides a separate export panel with page breaks, style presets and page controls. Its frontmatter option can retain the YAML block. Choose [Advanced PDF Export](https://github.com/ShrekBytes/advanced-pdf-export) for those document controls. Choose this plugin for a labeled property header with free field filtering and ordering inside the core exporter. [Complete PDF Export](https://github.com/nicodx/complete_pdf_export_Obsidian) also supports property cards through its own export workflow.
 

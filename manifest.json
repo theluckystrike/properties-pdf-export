@@ -1,7 +1,7 @@
 {
 	"id": "properties-pdf-export",
 	"name": "Properties in PDF Export",
-	"version": "1.2.1",
+	"version": "1.2.2",
 	"minAppVersion": "1.13.4",
 	"description": "Print note properties as a formatted header in the built-in PDF export.",
 	"author": "Michael Lip",
