@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.1
+
+### Patch Changes
+
+- f71e165: An edit of Folder layouts without Pro now shows how to get Pro, with a Sponsor on GitHub button. Before, the text saved but had no effect. Nothing is saved until Pro is on.
+
 ## 1.2.0
 
 ### Minor Changes

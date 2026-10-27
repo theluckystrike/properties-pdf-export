@@ -1,7 +1,6 @@
 {
 	"name": "properties-pdf-export",
-	"repository": {"type": "git", "url": "theluckystrike/properties-pdf-export.git"},
-	"version": "1.2.0",
+	"version": "1.2.1",
 	"private": true,
 	"description": "Print note properties as a formatted header in the built-in PDF export.",
 	"main": "main.js",
