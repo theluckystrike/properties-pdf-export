@@ -36,7 +36,7 @@ Lists become comma separated text. Checkboxes print as Yes or No, and numbers ke
 
 Save a layout rule for a folder when different kinds of notes need different headers. For example, keep reports in table layout and meetings in compact layout. A deeper folder can override its parent. Rules match path segments, so `Work` does not also match `Workshop`.
 
-<img src="https://raw.githubusercontent.com/theluckystrike/properties-pdf-export/HEAD/docs/folder-layouts.png" alt="Saved folder layout rules in settings with Pro inactive" width="720">
+<img src="https://raw.githubusercontent.com/theluckystrike/properties-pdf-export/HEAD/docs/folder-layouts.png" alt="Folder layouts field without Pro, with no rules shown" width="720">
 
 The rule format is one line per folder: `Reports = compact` or `Reports/Clients = table`. Rules affect layout only. Your hide list and preferred order still apply. Without Pro, the field is empty, saved rules stay, and the global layout applies to every note. Without Pro, an edit shows a Sponsor on GitHub notice.
 

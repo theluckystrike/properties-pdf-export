@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.3
+
+### Patch Changes
+
+- 8b08065: The README now shows a separate screenshot of the Folder layouts field. The plugin does not change.
+
 ## 1.2.2
 
 ### Patch Changes

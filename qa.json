@@ -29,9 +29,10 @@
   },
   {
     "feature": "folder-layouts",
-    "caption": "Folder rules are saved in settings; activation needs Pro.",
-    "eval": " const p = app.plugins.plugins['properties-pdf-export']; p.settings.folderLayouts='Reports = compact\\nReports/Clients = table'; await p.saveSettings(); app.setting.open(); app.setting.openTabById('properties-pdf-export'); return 'ok'; ",
-    "after": "app.setting.close(); 'ok'"
+    "caption": "Without Pro, Folder layouts shows no rules. Saved rules stay.",
+    "eval": "const p = app.plugins.plugins['properties-pdf-export']; p.settings.folderLayouts='Reports = compact\\nReports/Clients = table'; await p.saveSettings(); app.setting.open(); app.setting.openTabById('properties-pdf-export'); await new Promise(r=>setTimeout(r,900)); const row=[...document.querySelectorAll('.vertical-tab-content .setting-item')].find(el=>el.querySelector('.setting-item-name')?.textContent.trim()==='Folder layouts'); if(!row) throw new Error('Folder layouts row missing'); const field=row.querySelector('textarea'); if(!field) throw new Error('Folder layouts field missing'); if(field.value!=='') throw new Error('Folder layouts shows rules without Pro'); row.scrollIntoView({block:'center'}); await new Promise(r=>setTimeout(r,300)); const box=row.getBoundingClientRect(); if(box.top<0 || box.bottom>window.innerHeight) throw new Error('Folder layouts row is not in view'); return 'ok'; ",
+    "after": "app.setting.close(); 'ok'",
+    "wait": 700
   },
   {
     "feature": "properties-pdf-export",
