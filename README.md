@@ -6,6 +6,19 @@ Print the properties of a note as a readable header in Obsidian's built-in PDF e
 
 Free includes complete property headers, both layouts, a hide list, property ordering and a reading preview. Pro adds automatic layouts per folder for [$15 one time](https://github.com/sponsors/theluckystrike/sponsorships?tier_id=666162&metadata_source=properties-pdf-export) or [$5 a month](https://github.com/sponsors/theluckystrike?metadata_source=properties-pdf-export).
 
+## Quick start
+
+```markdown
+---
+author: Ana Lee
+status: draft
+tags: [report]
+---
+The text of the report.
+```
+
+Open a Markdown note with properties at its beginning. Switch to reading view and run Toggle printable header preview from the command palette. The Properties block appears above the note so you can inspect its labels and values. Next, use the note menu's Export to PDF action.
+
 ## Features
 
 ### Properties in the core PDF export
@@ -90,7 +103,7 @@ The header uses theme colors and a small set of print styles. Themes and CSS sni
 
 The core features are free. Pro features need a GitHub Sponsors sponsorship of theluckystrike: $5 a month or more, or $15 once. A total payment of $15 meets the payment requirement for Pro without further payment. Sign-in and the checks below still apply. Your notes stay readable and editable with or without Pro.
 
-GitHub handles the payment. Sponsor at https://github.com/sponsors/theluckystrike. You need no account for the free features. Pro needs the GitHub account that sponsors.
+GitHub handles the payment. Sponsor at https://github.com/sponsors/theluckystrike?frequency=one-time&metadata_source=properties-pdf-export. You need no account for the free features. Pro needs the GitHub account that sponsors.
 
 Until you select "Sign in with GitHub" in the settings, Properties in PDF Export makes no network requests. Sign in uses the GitHub device flow. Properties in PDF Export sends its public client ID and the scope `read:user` to `https://github.com/login/device/code` and shows you a code. While you enter the code at https://github.com/login/device, it asks `https://github.com/login/oauth/access_token` every few seconds to check the sign-in status. The scope permits profile reads only. GitHub needs this access to show the sponsorship tier. It grants no repository scope and no write access.
 
