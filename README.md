@@ -103,6 +103,8 @@ The header uses theme colors and a small set of print styles. Themes and CSS sni
 
 The core features are free. Pro features need a GitHub Sponsors sponsorship of theluckystrike: $5 a month or more, or $15 once. A total payment of $15 meets the payment requirement for Pro without further payment. Sign-in and the checks below still apply. Your notes stay readable and editable with or without Pro.
 
+[One payment turns on Pro in every NoteMods plugin](https://notemods.com/pro/).
+
 GitHub handles the payment. Sponsor at https://github.com/sponsors/theluckystrike?frequency=one-time&metadata_source=properties-pdf-export. You need no account for the free features. Pro needs the GitHub account that sponsors.
 
 Until you select "Sign in with GitHub" in the settings, Properties in PDF Export makes no network requests. Sign in uses the GitHub device flow. Properties in PDF Export sends its public client ID and the scope `read:user` to `https://github.com/login/device/code` and shows you a code. While you enter the code at https://github.com/login/device, it asks `https://github.com/login/oauth/access_token` every few seconds to check the sign-in status. The scope permits profile reads only. GitHub needs this access to show the sponsorship tier. It grants no repository scope and no write access.
@@ -113,4 +115,4 @@ After a successful check, Pro can work offline for up to 14 days. Sign out or a 
 
 ## Support
 
-For help and other plugins, visit [NoteMods](https://notemods.com/). When reporting a formatting problem, include your Obsidian version, theme, selected layout and a small example with private values removed. Describe whether it happens in the reading preview, saved PDF or both. The plugin is distributed under the MIT license.
+When reporting a formatting problem, include your Obsidian version, theme, selected layout and a small example with private values removed. Describe whether it happens in the reading preview, saved PDF or both. The plugin uses the MIT license.
