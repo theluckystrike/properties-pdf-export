@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.4
+
+### Patch Changes
+
+- 371e979: The Pro notice of Properties in PDF Export now says that one payment turns on Pro in every NoteMods plugin.
+
 ## 1.2.3
 
 ### Patch Changes

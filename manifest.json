@@ -1,9 +1,9 @@
 {
 	"id": "properties-pdf-export",
 	"name": "Properties in PDF Export",
-	"version": "1.2.3",
+	"version": "1.2.4",
 	"minAppVersion": "1.13.4",
-	"description": "Print note properties as a formatted header in the built-in PDF export.",
+	"description": "Print note properties, also called frontmatter or metadata, as a header in the built-in PDF export. Options set the layout, a hide list and the property order.",
 	"author": "Michael Lip",
 	"authorUrl": "https://github.com/theluckystrike",
 	"fundingUrl": "https://github.com/sponsors/theluckystrike",

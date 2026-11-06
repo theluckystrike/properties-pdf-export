@@ -10,7 +10,7 @@ import manifest from '../manifest.json';
 // notice with the "Sponsor on GitHub" button, nothing is saved, and the field shows the value in effect (no rules). The saved rules stay in data.json.
 // A Pro user saves the rules with no notice.
 const LEAD = 'Folder layouts need Pro.';
-const PITCH = 'Sponsor on GitHub, then sign in from the plugin settings.';
+const PITCH = 'One payment turns on Pro in every NoteMods plugin. Sponsor on GitHub, then sign in from the plugin settings.';
 
 function fakePro(pro: boolean): SponsorsManager {
 	return {
