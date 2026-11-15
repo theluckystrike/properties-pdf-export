@@ -1,7 +1,7 @@
 {
 	"id": "properties-pdf-export",
 	"name": "Properties in PDF Export",
-	"version": "1.2.4",
+	"version": "1.2.5",
 	"changes": [
 		"The Pro notice of Properties in PDF Export now says that one payment turns on Pro in every NoteMods plugin."
 	],
