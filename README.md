@@ -1,5 +1,7 @@
 # Properties in PDF Export
 
+[![Pro: $15 once or $5 a month on GitHub Sponsors](https://img.shields.io/badge/Pro-%2415%20once%20or%20%245%2Fmonth-ea4aaa?logo=githubsponsors&logoColor=white)](https://github.com/sponsors/theluckystrike) Pro costs [$15 one time](https://github.com/sponsors/theluckystrike/sponsorships?tier_id=666162&metadata_source=properties-pdf-export-readme) or [$5 a month](https://github.com/sponsors/theluckystrike/sponsorships?tier_id=666161&metadata_source=properties-pdf-export-readme) on GitHub Sponsors. One sponsorship turns on Pro in every NoteMods Obsidian plugin that has Pro.
+
 Print the properties of a note as a readable header in Obsidian's built-in PDF export. Author, date, status, tags and custom fields travel with the document you share. You do not need to copy them into the body or keep a separate export note up to date.
 
 <img src="https://raw.githubusercontent.com/theluckystrike/properties-pdf-export/HEAD/docs/print-preview.png" alt="Core PDF print preview with a formatted properties header" width="720">
